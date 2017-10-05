@@ -3,6 +3,7 @@ package dieula.collections.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         edT = (EditText) findViewById(R.id.etNomComplet);
         edT2 = (EditText) findViewById(R.id.etIdentif);
@@ -31,4 +34,16 @@ public class RegisterActivity extends AppCompatActivity {
         Intent i = new Intent(RegisterActivity.this, ProfileActivity.class);
         startActivity(i);
     }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // Respond to the action bar's Up/Home button to the home page with (finishAffinity)
+                Intent i = new Intent(RegisterActivity.this, UserLoginActivity.class);
+                startActivity(i);
+                finishAffinity();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
+

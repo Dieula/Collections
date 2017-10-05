@@ -42,8 +42,9 @@ import dieula.collections.models.Collections;
 public class CollectionsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
-    FragmentPagerAdapter adapterViewPager;
+   FragmentAdapter equipeAdapter;
+    ArrayList<Collections> aCollection;
+   // FragmentPagerAdapter adapterViewPager;
     GridView grid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +53,18 @@ public class CollectionsActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         grid = (GridView) findViewById(R.id.lvGrid);
+        // onclick in the listview for seeing the details
+     /*   grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Collections Collection = (Collections) grid.getItemAtPosition(position);
+                // Toast.makeText(TeamFayBerActivity.this, "Just click on the list and get back to do other choice", Toast.LENGTH_SHORT).show();
+
+            }
+        });*/
+
+      //  grid = (GridView) findViewById(R.id.lvGrid);
      //   grid.setAdapter((ListAdapter) new FragmentAdapter(getSupportFragmentManager()));
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.viewpager);
@@ -64,9 +74,12 @@ public class CollectionsActivity extends AppCompatActivity
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabStrip.setViewPager(vpPager);
 
-       FragmentAdapter serviceAdapter;
-        ArrayList<Collections> Collection;
-        GridView lvGrid;
+   /*     aCollection = new ArrayList<>();
+        equipeAdapter = new FragmentAdapter(CollectionsActivity.this, aCollection);
+        grid.setAdapter(equipeAdapter);
+
+        equipeAdapter.addAll(Collections.fromFakeData());
+        equipeAdapter.notifyDataSetChanged();*/
 
         // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         //fab.setOnClickListener(new View.OnClickListener() {

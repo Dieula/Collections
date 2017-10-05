@@ -28,6 +28,19 @@
         app:layout_constraintVertical_bias="0.0">
 
 
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="3:42 PM" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="37dp"
+            android:layout_height="22dp"
+            app:srcCompat="@drawable/ic_plane" />
+
         <RelativeLayout
             android:id="@+id/rlUserInfo"
             android:layout_width="match_parent"
@@ -35,6 +48,24 @@
             android:layout_below="@+id/ivMaj"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignEnd="@+id/tvTagLine"
+                android:layout_below="@+id/tvActivity"
+                android:layout_marginTop="17dp"
+                app:srcCompat="@mipmap/ic_launcher_round" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="26dp"
+                app:srcCompat="@mipmap/ic_launcher_round" />
 
             <TextView
                 android:id="@+id/tvTagLine"
@@ -53,24 +84,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/tvFollowerCount"
                 android:layout_below="@+id/tvville"
                 android:layout_marginTop="30dp"
                 android:text="154"
                 android:textColor="@color/bb_darkBackgroundColor"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_alignStart="@+id/tvFollowerCount" />
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/tvFollowingCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/tvUserName"
                 android:text="FOLLOWING"
                 android:textColor="@android:color/holo_orange_light"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_below="@+id/tvUserName"
-                android:layout_alignParentEnd="true" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvFollowerCount"
@@ -108,11 +140,11 @@
 
             <ImageView
                 android:id="@+id/ivMaj"
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="26dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="54dp"
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
 
@@ -132,12 +164,12 @@
                 android:id="@+id/tvActivity"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvFollowingCount"
-                android:layout_marginTop="40dp"
                 android:background="@color/bb_darkBackgroundColor"
                 android:gravity="center"
                 android:text="ACTIVITY"
-                android:textColor="@android:color/background_light" />
+                android:textColor="@android:color/background_light"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:id="@+id/tvWatchlist"
@@ -150,22 +182,88 @@
                 android:textColor="@color/bb_darkBackgroundColor" />
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="93dp"
-                android:layout_height="20dp"
+                android:id="@+id/ivBat"
+                android:layout_width="73dp"
+                android:layout_height="15dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                app:srcCompat="@mipmap/ic_bat" />
+                app:srcCompat="@drawable/ic_bat" />
+
+            <TextView
+                android:id="@+id/ivTweet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ivMaj"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/ivMaj"
+                android:text="Dieula Dareus"
+                android:textColor="@color/bb_darkBackgroundColor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imageView5"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/ivMaj"
+                android:text="Dieula Dareus"
+                android:textColor="@color/bb_darkBackgroundColor"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ivLike"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView5"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textView8"
+                app:srcCompat="@drawable/ic_like" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvTagLine"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ivTweet"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="Manzè piman tonbe griyen dan nwèl yo.."
+                android:textColor="@android:color/darker_gray"
+                android:layout_below="@+id/ivTweet"
+                android:layout_toStartOf="@+id/ivBat" />
+
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView8"
+                android:layout_toEndOf="@+id/ivMaj"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="Manzè piman tonbe griyen dan nwèl yo.."
+                android:textColor="@android:color/darker_gray" />
 
 
         </RelativeLayout>
-
-        <TextClock
-            android:id="@+id/textClock"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="3:42 PM" />
 
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>
