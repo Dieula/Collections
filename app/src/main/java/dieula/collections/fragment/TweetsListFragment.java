@@ -42,4 +42,6 @@ public class TweetsListFragment extends Fragment{
         aTweets.addAll(Collection);
         aTweets.notifyDataSetChanged();
     }
+
+
 }

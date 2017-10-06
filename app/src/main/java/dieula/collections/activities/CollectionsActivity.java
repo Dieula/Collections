@@ -37,6 +37,7 @@ import dieula.collections.R;
 import dieula.collections.adapter.FragmentAdapter;
 import dieula.collections.fragment.FeaturedFragment;
 import dieula.collections.fragment.FollowingFragment;
+import dieula.collections.fragment.TweetsListFragment;
 import dieula.collections.models.Collections;
 
 public class CollectionsActivity extends AppCompatActivity
@@ -186,6 +187,8 @@ public class CollectionsActivity extends AppCompatActivity
                         return FollowingFragment.newInstance(1, "Page # 2");
                     case 2: // Fragment # 1 - This will show SecondFragment
                         return FeaturedFragment.newInstance(2, "Page # 3");
+                    case 3: // Fragment # 1 - This will show SecondFragment
+                       return TweetsListFragment.newInstance(2, "Page # 3");
                     default:
                         return null;
                 }
